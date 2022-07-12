@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-19</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="my-component">
+            <button @click="numberA++">Increase A</button>
+            <button @click="numberA--">Decrease A</button>
+            <button @click="numberB++">Increase B</button>
+            <button @click="numberB--">Decrease B</button>
+            <div>{{ numberA }} - {{ numberB }}</div>
+            <div>{{ calculatute() }} - {{ calculatute_2 }}</div>
+        </div>
+    </div>
+    <script>
+         app = Vue.createApp({
+            data() {
+            return {
+                numberA: 0,
+                numberB: 0
+            }
+        },
+        methods: {
+            calculatute() {
+                console.log("methods");
+                return this.numberA;
+            }
+        },
+        computed: {
+            calculatute_2() {
+                console.log("compoted");
+                return this.numberB;
+            }
+        }
+        });
+
+        app.mount('#app');
+    </script>
+    <style lang="scss" scoped>
+        .my-component {
+            color: rgb(40, 131, 104);
+        }
+    </style>
+</body>
+</html>
